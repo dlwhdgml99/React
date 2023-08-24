@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+protoTypes 종류
+1. array
+    - 배열
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. arrayOf(다른 PropType)
+    - 특정 PropType으로 이루어진 배열을 의미
+    - arrayOf(PropTypes.number)는 숫자로 이루어진 배열
 
-## Available Scripts
+3. bool
+    - true or false
 
-In the project directory, you can run:
+4. func
+    - 함수
 
-### `npm start`
+5. number
+    - 숫자
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+6. object
+    - 객체
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+7. string
+    - 문자열
 
-### `npm test`
+8. symbol
+    - ES6의 Symbol
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+9. node
+    - 렌더링할 수 있는 모든 것
+    (숫자, 문자열 혹은 JSX 코드, children도 node PropType)
 
-### `npm run build`
+10. instanceOf(클래스)
+    - 특정 클래스의 인스턴스 (예 : instanceOf(MyClass))
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+11. oneOf(['dog', 'cat'])
+    - 주어진 배열 요소 중 하나
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+12. oneOfType([React.PropTypes.string, PropTypes.number])
+    - 주어진 배열 안의 종류 중 하나
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+13. objectOf(Reat.PropTypes,number)
+    - 객체의 모든 키 값이 인자로 주어진 PropType인 객체
 
-### `npm run eject`
+14. shape([name: PropTypes.string, num: PropTypes.number])
+    - 주어진 스키마를 가진 객체
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+15. any
+    - 아무 종류
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+state
+- 컴포넌트 내부에서 바뀔 수 있는 값
+- props는 컴포넌트가 사용되는 과정에서 부모 컴포넌트가 설정하는 값, 컴포넌트 자신은 해당 props를 읽기 전용으로 사용할 수 있음
