@@ -1,4 +1,4 @@
-* protoTypes 종류
+### protoTypes 종류
 1. array
     - 배열
 
@@ -46,11 +46,11 @@
 15. any
     - 아무 종류
 
-state
+### state
 - 컴포넌트 내부에서 바뀔 수 있는 값
 - props는 컴포넌트가 사용되는 과정에서 부모 컴포넌트가 설정하는 값, 컴포넌트 자신은 해당 props를 읽기 전용으로 사용할 수 있음
 
-useState 사용하기
+### useState 사용하기
 - useState 함수의 인자에는 상태의 최소값을 넣어줘야함
 ! 클래스 컴포넌트든 함수 컴포넌트드 state값을 바꾸어야 할 때는 setState혹은 useState를 통해 전달받은 세터 함수를 사용해야함
 ! 배열이나 객체 사본을 만들고 그 사본에 값을 업데이트한 후, 그 사본의 상태를 setState혹은 세터 함수를 통해 업데이트 함
@@ -70,7 +70,7 @@ useState 사용하기
         ...
     </div>
 
-react에서 지원하는 이벤트 종류
+### react에서 지원하는 이벤트 종류
 - Clipboard
 - Composition
 - Keyboard
@@ -102,4 +102,9 @@ ex ) 0.5s뒤에 e객체를 참조하면 e객체 내부의 모든 값이 비워�
 
 객체 안에서 key를 []로 감싸면 그 안에 넣은 레퍼런스가 가리키는 실제 값이 key 값으로 사용됨
 
+- input의 개수가 많아질 것 같으면 e.target.name을 활용하는 것이 더 좋을 수 있다.
+
+- e.target.name 값을 활용하려면, useState를 쓸 때 input 값들이 들어있는 form객체를 사용
+
+### ref:DOM에 이름 달기
 

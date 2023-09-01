@@ -72,6 +72,7 @@ export default App;
 // export default App;
 
 // EventPractice.js
+/*
 import EventPractice from "./EventPractice";
 
 const App = () => {
@@ -79,3 +80,6 @@ const App = () => {
 };
 
 export default App;
+*/
+
+//ValidationSample
