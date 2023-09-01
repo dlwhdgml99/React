@@ -171,3 +171,6 @@ React에서는 Component에도 ref를 달 수 있다. 이 방법은 주로 컴�
 scrollToBottom 메서드의 첫 번째 줄에서는 ES6의 비구조화 할당 문법을 사용했다.
 이렇게 만든 메서드는 부모 컴포넌트인 App 컴포넌트에서 ScrollBox에 ref를 달면 사용할 수 있다.
 
+문법상으로 onClick={this.scrollBox.scrollBottom} 같은 형식으로 작성해도 틀린 것은 아니나 처음 렌더링될 때는 this.scrollBox값이 undefined이므로 this.scrollBox.scrollToBottom 값을 읽어 오는 과정에서 오류가 발생한다. 화살표 함수 문법을 사용하여 아예 새로운 함수를 만들고 그 내부에서 this.scrollBox.scrollBottom 메서드를 실행하면, 버튼을 누를 때(이미 한 번 렌더링을 해서 this.scrollBox를 설정한 시점) this.scrollBox.scrollBottom 값을 읽어 와서 실행하므로 오류가 발생하지 않는다.
+
+함수형 컴포넌트에서 ref를 사용하려면 useRef라는 Hook 함수를 사용한다. 사용법은 React.createRef와 유사하다.
