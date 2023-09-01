@@ -63,10 +63,19 @@ export default App;
 // export default App;
 
 // Say.js
-import Say from './Say';
+// import Say from './Say';
+
+// const App = () => {
+//   return <Say />;
+// };
+
+// export default App;
+
+// EventPractice.js
+import EventPractice from "./EventPractice";
 
 const App = () => {
-  return <Say />;
+  return <EventPractice />
 };
 
 export default App;
