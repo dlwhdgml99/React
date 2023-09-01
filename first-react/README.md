@@ -127,6 +127,47 @@ ref는 전역적으로 작동하지 않고 컴포넌트 내부에서만 적용�
 - 스크롤 박스 조작하기
 - Canvas 요소에 그림 그리기
 
-<이 때는 어쩔 수 없이 DOM에 직접적으로 접근해야 하는데, 이를 위해 바로 ref 사용>
+이 때는 어쩔 수 없이 DOM에 직접적으로 접근해야 하는데, 이를 위해 바로 ref 사용
 
+## ref 사용
+- 콜백 함수를 통한 ref 설정
+- ref를 달고자 하는 요소에 ref라는 콜백 함수를 props로 전달해주면 된다.
+- 이 콜백 함수는 ref 값을 파라미터로 전달받는다.
+- 함수 내부에서 파라미터로 받은 ref를 컴포넌트의 멤버 변수로 설정해준다.
+
+<input ref={(ref) => {this.input=ref}} />
+- this.input은 요소의 DOM을 가리킨다.
+- ref의 이름은 원하는 것으로 자유롭게 지정할 수 있다.
+- DOM 타입과 관계없이 this.superman = ref처럼 마음대로 지정한다.
+
+### createRef를 통한 ref 설정
+우선 컴포너트 내부에서 멤버 변수로 React.createRef()를 담아주어야 한다.
+해당 멤버 변수 ref를 담고자 하는 요소에 ref props로 넣어주면 ref 설정이 완료된다.
+설정한 뒤 나중에 ref를 설정해준 DOM에 접근하려면 this.input.current를 조회하면 된다.
+
+- input에 ref 달기
+...
+<input ref={(ref) => this.input=ref}
+...
+/>
+
+# 컴포넌트에 ref 달기
+React에서는 Component에도 ref를 달 수 있다. 이 방법은 주로 컴포넌트 내부에 있는 DOM을 컴포넌트 외부에서 사용할 때 쓴다. 컴포넌트에 ref를 다는 방법은 DOM에 ref를 다는 방법과 같다.
+
+- 사용법
+<MyComponent
+    ref={(ref) => {this.myComponent=ref}}
+/>
+
+- MyComponent 내부의 메서드 및 멤버 변수에도 접근할 수 있다(내부의 ref에도 접근할 수 있다)(ex) myComponent.handleClick, myComponent.input등 )
+
+- 컴포넌트 초기 설정
+스크롤 박스가 있는 컴포넌트를 하나 만들고, 스크롤바를 아래로 내리는 작업을 부모 컴포넌트에서 실행하는 예
+
+- scrollTop : 세로 스크롤바 위치(0~350)
+- scrollHeight: 스크롤이 있는 박스 안의 div 높이(650)
+- clientHeight: 스크롤이 있는 박스의 높이(300)
+
+scrollToBottom 메서드의 첫 번째 줄에서는 ES6의 비구조화 할당 문법을 사용했다.
+이렇게 만든 메서드는 부모 컴포넌트인 App 컴포넌트에서 ScrollBox에 ref를 달면 사용할 수 있다.
 

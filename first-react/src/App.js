@@ -83,6 +83,7 @@ export default App;
 */
 
 //ValidationSample
+/*
 import { Component } from "react";
 import ValidationSample from "./ValidationSample";
 
@@ -95,3 +96,23 @@ class App extends Component {
 }
 
 export default App;
+*/
+
+//ScrollBox
+/*
+import { Component } from "react";
+import ScrollBox from "./ScrollBox";
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <ScrollBox ref={(ref) => this.ScrollBox.ref} />
+        <button onClick={() => this.ScrollBox.scrollToBottom()}>맨 밑으로</button>
+      </div>
+    );
+  }
+}
+
+export default App;
+*/
